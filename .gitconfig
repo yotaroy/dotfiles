@@ -1,0 +1,8 @@
+[include]
+  path = ~/.gitconfig.local
+[core]
+	excludesfile = /Users/yyamaguchi/.gitignore_global
+[color]
+	diff = auto
+	branch = auto
+	status = auto
