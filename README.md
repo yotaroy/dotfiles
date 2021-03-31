@@ -6,7 +6,7 @@
 sh install.sh
 ```
 
-Create `~/.gitconfig.local` file, write your name and email.
+Write your name and email to ~/.gitconfig.local`.
 
 ```bash
 echo "[user]\n  name = XXXX XXXX\n  email = XXXX@XXXX" >> ~/.gitconfig.local
