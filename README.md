@@ -1,9 +1,13 @@
 # dotfiles
 
-Create `~/.gitconfig.local` file.
+## Install dotfiles
 
-'''txt
-[user]
-	name = XXXX XXXXX
-	email = XXXX@XXXX
-'''
+```bash
+sh install.sh
+```
+
+Create `~/.gitconfig.local` file, write your name and email.
+
+```bash
+echo "[user]\n  name = XXXX XXXX\n  email = XXXX@XXXX" >> ~/.gitconfig.local
+```
