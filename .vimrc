@@ -37,3 +37,13 @@ autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
 " for haskell
 autocmd FileType haskell setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
+
+" leader
+let mapleader = "\<space>"
+" copy and paste with clipboard
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
