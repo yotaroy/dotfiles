@@ -1,7 +1,7 @@
 [include]
   path = ~/.gitconfig.local
 [core]
-	excludesfile = /Users/yyamaguchi/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [color]
 	diff = auto
 	branch = auto

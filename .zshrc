@@ -37,10 +37,8 @@ zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
 zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
 zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
-# PROMPT='%c '\$vcs_info_msg_0_' %# '
-# PROMPT='%~'\$vcs_info_msg_0_' $ '
 PROMPT='%F{blue}%~%f $ '
-RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
+RPROMPT='${vcs_info_msg_0_}'
 precmd(){ vcs_info }
 
 # use .zshrc.local if you want to write local settings 
