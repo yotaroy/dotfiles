@@ -5,6 +5,8 @@ set fenc=utf-8
 
 " display column number
 set number
+set relativenumber
+set cursorline
 
 " comment out color
 hi Comment ctermfg=gray
@@ -33,10 +35,8 @@ set ruler
 " for python
 autocmd FileType python setl autoindent
 autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
+autocmd FileType python,haskell,rust setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
-" for haskell
-autocmd FileType haskell setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
 " leader
 let mapleader = "\<space>"
