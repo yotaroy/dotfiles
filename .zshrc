@@ -2,11 +2,19 @@ export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='less'
 
-autoload -U compinit
-compinit
+# zsh-completions
+FPATH=${HOME}/.zsh/zsh-completions/src:${FPATH}
 
-# zsh autosuggestions
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# zsh-autosuggestions
+source ${HOME}/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# completions for git
+FPATH=${HOME}/.zsh/completion:${FPATH}
+zstyle ':completion:*:*:git:*' script ${HOME}/.zsh/completion/git-completion.bash
+
+# activate completion
+autoload -Uz compinit
+compinit
 
 export LSCOLORS=exfxcxdxbxegedabagacad
 # export LSCOLORS=gxfxcxdxbxegedabagacad
@@ -18,7 +26,7 @@ alias gls="gls --color"
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
 # history
-HISTFILE=$HOME/.zsh_history
+HISTFILE=${HOME}/.zsh_history
 HISTSIZE=1000
 SAVEHIST=100000
 setopt HIST_IGNORE_DUPS
@@ -28,6 +36,7 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_REDUCE_BLANKS
 setopt EXTENDED_HISTORY
 setopt HIST_NO_STORE
+setopt SHARE_HISTORY
 
 # git settings
 autoload -Uz vcs_info

@@ -8,9 +8,6 @@ set number
 set relativenumber
 set cursorline
 
-" comment out color
-hi Comment ctermfg=gray
-
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -29,6 +26,9 @@ set laststatus=2
 syntax on
 
 set background=dark
+
+" comment out color
+hi Comment ctermfg=gray
 
 set ruler
 

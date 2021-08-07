@@ -1,3 +1,5 @@
+#!/bin/sh
+
 set -eu
 
 for f in .??*
