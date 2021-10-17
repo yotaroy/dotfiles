@@ -1,9 +1,19 @@
 # dotfiles
 
-## Install dotfiles
+## Set up
+
+For Mac,
 
 ```bash
-sh install.sh
+./install-mac.sh
+```
+
+## Deploy dotfiles
+
+Creates symbolic links to the home directory.
+
+```bash
+./deploy.sh
 ```
 
 Write your name and email to ~/.gitconfig.local`.

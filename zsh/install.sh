@@ -3,11 +3,6 @@
 echo "============ Create ~/.zsh directory ============ "
 mkdir ${HOME}/.zsh
 
-# zsh-autosuggestions
-# https://github.com/zsh-users/zsh-autosuggestions
-echo "============ Install zsh-autosuggestions ============ "
-git clone https://github.com/zsh-users/zsh-autosuggestions ${HOME}/.zsh/zsh-autosuggestions
-
 # zsh-completions
 # https://github.com/zsh-users/zsh-completions
 echo "============ Install zsh-completions ============ "
@@ -17,3 +12,13 @@ rm -f ~/.zcompdump
 
 echo "============ Setting for git completions ============ "
 ./git-completion.sh
+
+
+# zinit
+# https://github.com/zdharma/zinit
+echo "============ Install zinit ============ "
+mkdir ${HOME}/.zinit
+git clone https://github.com/zdharma/zinit.git ~/.zinit/bin
+source ${HOME}/.zshrc
+# compile zinit after installing and reloading the shell
+zinit self-update
