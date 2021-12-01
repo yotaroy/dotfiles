@@ -13,12 +13,9 @@ rm -f ~/.zcompdump
 echo "============ Setting for git completions ============ "
 ./git-completion.sh
 
-
 # zinit
-# https://github.com/zdharma/zinit
+# https://github.com/zdharma-continuum/zinit
 echo "============ Install zinit ============ "
 mkdir ${HOME}/.zinit
-git clone https://github.com/zdharma/zinit.git ~/.zinit/bin
-source ${HOME}/.zshrc
-# compile zinit after installing and reloading the shell
-zinit self-update
+git clone https://github.com/zdharma-continuum/zinit.git ~/.zinit/bin
+
