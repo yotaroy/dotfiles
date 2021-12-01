@@ -38,6 +38,13 @@ zinit ice proto'git' pick'init.sh'
 zinit light b4b4r07/enhancd
 export ENHANCD_FILTER=fzf
 
+zinit light asdf-vm/asdf
+. ${ASDF_DIR}/asdf.sh
+fpath=(${ASDF_DIR}/completions $fpath)
+autoload -Uz compinit && compinit
+
+# ---------------------------------------------------------------------------
+
 export LSCOLORS=exfxcxdxbxegedabagacad
 # export LSCOLORS=gxfxcxdxbxegedabagacad
 export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
@@ -60,20 +67,7 @@ setopt EXTENDED_HISTORY
 setopt HIST_NO_STORE
 setopt SHARE_HISTORY
 
-# git settings
-# autoload -Uz vcs_info
-# setopt prompt_subst
-# zstyle ':vcs_info:git:*' check-for-changes true
-# zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
-# zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
-# zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
-# zstyle ':vcs_info:*' actionformats '[%b|%a]'
-# PROMPT='%F{blue}%~%f $ '
-# RPROMPT='${vcs_info_msg_0_}'
-# precmd(){ vcs_info }
-
-
-# ------------------------------ fzf settings ------------------------------
+# ------------------------------ fzf settings -------------------------------
 function select-history() {
   BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "${LBUFFER}" --prompt="History > ")
   CURSOR=${#BUFFER}
@@ -84,6 +78,7 @@ bindkey '^r' select-history
 
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 
+# ---------------------------------------------------------------------------
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
