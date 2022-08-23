@@ -37,7 +37,7 @@ zinit ice from"gh-r" as"program"
 zinit light junegunn/fzf
 
 # enhancd
-zinit ice proto'git' pick'init.sh'
+zinit ice pick'init.sh'
 zinit light b4b4r07/enhancd
 export ENHANCD_DISABLE_DOT=1
 export ENHANCD_DISABLE_HYPHEN=1
@@ -50,7 +50,7 @@ fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit && compinit
 
 # exa
-zinit ice as"program" from"gh-r" mv"exa* -> exa" pick"bin/exa"
+zinit ice as"program" from"gh-r" pick"bin/exa"
 zinit light ogham/exa
 
 # bat

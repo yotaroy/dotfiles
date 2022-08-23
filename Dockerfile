@@ -5,7 +5,9 @@ RUN apt-get update && \
     ca-certificates \
     zsh \
     git \
-    curl
+    curl \
+    unzip \
+    file
 
 ARG UID=1001
 ARG GID=1001
@@ -18,5 +20,7 @@ WORKDIR /home/test-user
 
 RUN touch .zshrc && \
     mkdir dotfiles
+
+ENV TERM=xterm-256color
 
 CMD ["/bin/zsh"]
