@@ -17,6 +17,8 @@ FPATH=${HOME}/.zsh/zsh-completions/src:${FPATH}
 FPATH=${HOME}/.zsh/completion:${FPATH}
 zstyle ':completion:*:*:git:*' script ${HOME}/.zsh/completion/git-completion.bash
 
+zstyle ':completion:*:default' menu select=2
+
 # zinit
 source ${HOME}/.zinit/bin/zinit.zsh
 
@@ -30,18 +32,34 @@ zinit ice wait; zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-syntax-highlighting
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
+# fzf
 zinit ice from"gh-r" as"program"
 zinit light junegunn/fzf
-# zinit pack for fzf
 
+# enhancd
 zinit ice proto'git' pick'init.sh'
 zinit light b4b4r07/enhancd
+export ENHANCD_DISABLE_DOT=1
+export ENHANCD_DISABLE_HYPHEN=1
 export ENHANCD_FILTER=fzf
 
+# asdf
 zinit light asdf-vm/asdf
 . ${ASDF_DIR}/asdf.sh
 fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit && compinit
+
+# exa
+zinit ice as"program" from"gh-r" mv"exa* -> exa" pick"bin/exa"
+zinit light ogham/exa
+
+# bat
+zinit ice as"program" from"gh-r" mv"bat* -> bat" pick"bat/bat"
+zinit light sharkdp/bat
+
+# fd
+zinit ice as"program" from"gh-r" mv"fd* -> fd" pick"fd/fd"
+zinit light sharkdp/fd
 
 # ---------------------------------------------------------------------------
 
@@ -69,15 +87,32 @@ setopt SHARE_HISTORY
 
 # ------------------------------ fzf settings -------------------------------
 function select-history() {
-  BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "${LBUFFER}" --prompt="History > ")
+  # BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "${LBUFFER}" --prompt="History > ")
+  BUFFER=$(history -n -r 1 | fzf --exact --no-sort +m --query "${LBUFFER}" --prompt="History > ")
   CURSOR=${#BUFFER}
   zle redisplay
+  # zle accept-line # select and immediately send enter
 }
 zle -N select-history
 bindkey '^r' select-history
 
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 
+# ---------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------
+if [[ -x `which bat` ]]; then
+  alias cat='bat'
+fi
+
+if [[ -x `which colordiff` ]]; then
+  alias diff='colordiff'
+fi
+
+# brew install gnu-sed
+if [[ -x `which gsed` ]]; then
+  alias sed='gsed'
+fi
 # ---------------------------------------------------------------------------
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
