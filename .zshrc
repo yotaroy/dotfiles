@@ -115,6 +115,19 @@ if [[ -x `which gsed` ]]; then
 fi
 # ---------------------------------------------------------------------------
 
+# Mac OS
+if [ "$(uname)" = 'Darwin' ]; then
+    bell() {
+      if [ $? -eq 0 ]; then
+        afplay /System/Library/Sounds/Glass.aiff
+      else
+        afplay /System/Library/Sounds/Sosumi.aiff
+      fi
+    }
+fi
+
+# ---------------------------------------------------------------------------
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
