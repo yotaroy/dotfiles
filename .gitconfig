@@ -8,3 +8,11 @@
 	status = auto
 [rebase]
 	autostash = true
+[init]
+	defaultBranch = main
+[fetch]
+	prune = true
+[url "ssh://git@github.com"]
+	insteadOf = https://github.com
+[alias]
+	delete-branch = !git branch -vv | grep ': gone]' | awk '{print $1}' | xargs -r git branch -D
