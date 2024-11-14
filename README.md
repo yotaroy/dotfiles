@@ -23,6 +23,17 @@ Write your name and email to ~/.gitconfig.local`.
 echo "[user]\n  name = XXXX XXXX\n  email = XXXX@XXXX" >> ~/.gitconfig.local
 ```
 
+## Install via homebrew
+
+- chrome
+- alacritty
+- 1password
+- tmux
+- alfred
+- hackgen, hackgen-nerd
+  - https://github.com/yuru7/HackGen
+- karabiner
+
 ## Demo
 
 ```bash
