@@ -23,16 +23,13 @@ Write your name and email to ~/.gitconfig.local`.
 echo "[user]\n  name = XXXX XXXX\n  email = XXXX@XXXX" >> ~/.gitconfig.local
 ```
 
-## Install via homebrew
+## Install packages via Homebrew
 
-- chrome
-- alacritty
-- 1password
-- tmux
-- alfred
-- hackgen, hackgen-nerd
-  - https://github.com/yuru7/HackGen
-- karabiner
+```bash
+brew bundle --file=./Brewfile
+```
+
+`install.sh` runs this automatically when `brew` is available.
 
 ## Demo
 

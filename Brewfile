@@ -1,0 +1,11 @@
+brew "colordiff"
+brew "tmux"
+cask "1password"
+cask "alacritty"
+cask "alfred"
+# https://github.com/yuru7/HackGen
+cask "font-hackgen"
+cask "font-hackgen-nerd"
+cask "google-chrome"
+cask "karabiner-elements"
+cask "slack"
