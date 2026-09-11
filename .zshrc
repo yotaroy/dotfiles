@@ -32,30 +32,12 @@ zinit ice wait; zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-syntax-highlighting
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
-# fzf
-zinit ice from"gh-r" as"program"
-zinit light junegunn/fzf
-
 # enhancd
 # zinit ice pick'init.sh'
 # zinit light b4b4r07/enhancd
 # export ENHANCD_DISABLE_DOT=1
 # export ENHANCD_DISABLE_HYPHEN=1
 # export ENHANCD_FILTER=fzf
-
-# exa
-zinit ice as"program" from"gh-r" pick"bin/exa"
-zinit light ogham/exa
-
-# bat
-zinit ice as"program" from"gh-r" mv"bat* -> bat" pick"bat/bat"
-zinit light sharkdp/bat
-
-export BAT_THEME="Nord"
-
-# fd
-zinit ice as"program" from"gh-r" mv"fd* -> fd" pick"fd/fd"
-zinit light sharkdp/fd
 
 # ---------------------------------------------------------------------------
 
@@ -97,6 +79,8 @@ export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 # ---------------------------------------------------------------------------
 
 # ---------------------------------------------------------------------------
+export BAT_THEME="Nord"
+
 if [[ -x `which bat` ]]; then
   alias cat='bat'
 fi

@@ -1,4 +1,8 @@
+brew "bat"
 brew "colordiff"
+brew "eza"
+brew "fd"
+brew "fzf"
 brew "tmux"
 cask "1password"
 cask "alacritty"
