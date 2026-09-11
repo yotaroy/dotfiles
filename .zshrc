@@ -32,13 +32,6 @@ zinit ice wait; zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-syntax-highlighting
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
-# enhancd
-# zinit ice pick'init.sh'
-# zinit light b4b4r07/enhancd
-# export ENHANCD_DISABLE_DOT=1
-# export ENHANCD_DISABLE_HYPHEN=1
-# export ENHANCD_FILTER=fzf
-
 # ---------------------------------------------------------------------------
 
 export LSCOLORS=exfxcxdxbxegedabagacad
