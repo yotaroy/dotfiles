@@ -43,12 +43,6 @@ zinit light junegunn/fzf
 # export ENHANCD_DISABLE_HYPHEN=1
 # export ENHANCD_FILTER=fzf
 
-# asdf
-zinit light asdf-vm/asdf
-. ${ASDF_DIR}/asdf.sh
-fpath=(${ASDF_DIR}/completions $fpath)
-autoload -Uz compinit && compinit
-
 # exa
 zinit ice as"program" from"gh-r" pick"bin/exa"
 zinit light ogham/exa
